@@ -20,20 +20,59 @@ const movieSchema = new mongoose.Schema ({
 const movieModel = mongoose.model('Movie', movieSchema);
 
 // Creating Document
-const createDoc = async () => {
+const insertMannyDoc = async () => {
     try {
-      const m1 = new movieModel({
-            name: "Extraction 2",
-            ratings: 4,
-            money: 60000,
-            genre: ['action', 'adventure'],
-            isActive: true,
-            comments: [{value: "That was an amazing movie."}]
-        })
+    //   const m1 = new movieModel({
+    //         name: "Transformer",
+    //         ratings: 2,
+    //         money: 72454685,
+    //         genre: ['Action', 'Robotics'],
+    //         isActive: true,
+    //         comments: [{value: "Hillarious Movie"}]
+    //     })
 
-        const result = await m1.save();
+    //     const m2 = new movieModel({
+    //         name: "Avatar 1",
+    //         ratings: 5,
+    //         money: 12455487650415,
+    //         genre: ['Action', 'Sci-Fie', 'Science'],
+    //         isActive: true,
+    //         comments: [{value: "very interested movie"}, {value: "Awesome Graphics"}, {value: "One of the best movie i have ever seen"}]
+    //     })
+
+    //     const m3 = new movieModel({
+    //         name: "Avenger -1",
+    //         ratings: 5,
+    //         money: 8712456,
+    //         genre: ['Comedy', 'Awesome Graphics'],
+    //         isActive: true,
+    //         comments: [{value: "I love this movie"}]
+    //     })
+
+    //     const m4 = new movieModel({
+    //         name: "Avatar - 2",
+    //         ratings: 4.5,
+    //         money: 987545316456312,
+    //         genre: ['vfx', 'adventure', 'action'],
+    //         isActive: true,
+    //         comments: [{value: "Nice vfx"}, {value: "cool graphics"}]
+    //     })
+
+    //     const m5 = new movieModel({
+    //         name: "Pirates of carabian",
+    //         ratings: 4.7,
+    //         money: 9254865462156,
+    //         genre: ['action', 'comedy'],
+    //         isActive: true,
+    //         comments: [{value: "I wached all parts of this series"}]
+    //     })
+
+        // const result = await m1.save(); // to save one document
+        const result = await movieModel.insertMany([m1, m2, m3, m4, m5]);
     } catch (error) {
         console.log(error);
     }
 }
-export {createDoc};
+
+// export default movieModel;
+export {insertMannyDoc};
