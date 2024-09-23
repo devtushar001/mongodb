@@ -68,11 +68,11 @@ const insertMannyDoc = async () => {
     //     })
 
         // const result = await m1.save(); // to save one document
-        const result = await movieModel.insertMany([m1, m2, m3, m4, m5]);
+        // const result = await movieModel.insertMany([m1, m2, m3, m4, m5]);
     } catch (error) {
         console.log(error);
     }
 }
 
-// export default movieModel;
-export {insertMannyDoc};
+export default movieModel;
+// export {insertMannyDoc};

@@ -1,5 +1,5 @@
 import express from 'express';
-import {insertMannyDoc } from './models/Movies.js';
+// import {insertMannyDoc } from './models/Movies.js';
 import connectDb from './db/connectDb.js';
 // import movieModel from './models/Movies.js';
 const app = express();
@@ -9,7 +9,8 @@ const DATABASE_URL = process.env.DATABASE_URL || 'mongodb://127.0.0.1:27017/movi
 
 connectDb(DATABASE_URL);
 // movieModel();
-insertMannyDoc();
+// insertMannyDoc();
+
 app.listen(port, () => 
     {console.log(`Server listening on port ${port}`);
 });
